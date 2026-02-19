@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Fraud Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="history-container">
+    <h2>📋 Claims History</h2>
+    <table id="claimsTable">
+        <thead>
+            <tr>
+                <th>Age</th>
+                <th>Claim Amount</th>
+                <th>Incident Type</th>
+                <th>Fraud Score</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="claimsBody">
+        </tbody>
+    </table>
+</div>
+    <nav class="navbar">
+        <div class="logo">🛡️ FraudGuard AI</div>
+    </nav>
+<script src="script.js"></script>
+    <div class="hero">
+        <h1>Insurance Fraud Detection</h1>
+        <p>AI-powered system to detect fraudulent insurance claims in real-time</p>
+    </div>
+
+    <div class="form-container">
+        <h2>Submit a Claim</h2>
+        <form id="fraudForm">
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" id="age" placeholder="Enter your age" required>
+            </div>
+            <div class="form-group">
+                <label>Claim Amount ($)</label>
+                <input type="number" id="claim_amount" placeholder="Enter claim amount" required>
+            </div>
+            <div class="form-group">
+                <label>Incident Type</label>
+                <select id="incident_type">
+                    <option value="Collision">Collision</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Police Report Filed?</label>
+                <select id="police_report">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">🔍 Analyze Claim</button>
+        </form>
+    </div>
+<div class="form-group">
+    <label>Number of Witnesses</label>
+    <input type="number" id="witnesses" placeholder="Enter number of witnesses" min="0">
+</div>
+
+<div class="form-group">
+    <label>Incident Severity</label>
+    <select id="incident_severity">
+        <option value="Minor">Minor</option>
+        <option value="Major">Major</option>
+        <option value="Total Loss">Total Loss</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Vehicle Claim Amount ($)</label>
+    <input type="number" id="vehicle_claim" placeholder="Enter vehicle claim amount">
+</div>
+<div class="form-group">
+    <label>Claimant Income ($)</label>
+    <input type="number" id="income" placeholder="Enter your annual income">
+</div>
+
+<div class="form-group">
+    <label>Previous Claims (in last 5 years)</label>
+    <input type="number" id="previous_claims" placeholder="Enter number of previous claims" min="0">
+</div>
+
+<div class="form-group">
+    <label>Location/City</label>
+    <select id="location">
+        <option value="metro">Metro City</option>
+        <option value="suburban">Suburban</option>
+        <option value="rural">Rural</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Medical Report Submitted?</label>
+    <select id="medical_report">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Upload Accident Photo</label>
+    <input type="file" id="accident_photo" accept="image/*">
+</div>
+</body>
+</html>
+<div class="></div>form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #1a1a2e;
+    border-left: 4px solid #00d4ff;
+    padding-left: 12px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #0f3460, #00d4ff);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+<div id="result" style="display:none; padding:20px; border-radius:10px; margin-top:20px; text-align:center;">
+</div>
+<script src="script.js"></script>
